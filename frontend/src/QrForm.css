@@ -32,8 +32,14 @@ body {
   
   .qr-code-overlay {
     position: absolute;
-    top: 186px;  /* Điều chỉnh để QR code rơi đúng vùng trống */
-    left: 51%; /* Điều chỉnh để QR code rơi đúng vùng trống */
+    top: 195px;
+    left: 52.5%;
+    transform: translateX(-50%);
+  }
+  .qr-code-overlay-evn {
+    position: absolute;
+    top: 187px;
+    left: 50.8%;
     transform: translateX(-50%);
   }
   
@@ -296,11 +302,19 @@ body {
   .qr-code-overlay {
     width: 90%;
     position: absolute;
-    top: 110px;
-    left: 45px;
+    top: 145px;
+    left: 71px;
     max-width: 0;
-    transform: scale(0.7);
-}
+    transform: scale(0.8);
+  }
 
+  .qr-code-overlay-evn {
+    width: 90%;
+    position: absolute;
+    top: 134px;
+    left: 49px;
+    max-width: 0;
+    transform: scale(0.8);
+  }
 
 }

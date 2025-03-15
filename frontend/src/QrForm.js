@@ -248,7 +248,74 @@ function QrForm() {
             </div>
 
             <div className="qr-display-container">
-                <h2>Mã QR của bạn</h2>
+                <h2>Mã QR VNEDU</h2>
+
+                {qrCode ? (
+                    <div className="qr-frame-container">
+                        <img
+                            src="images/qr-kit-vnedu.png"
+                            alt="Khung VietQR"
+                            className="qr-frame"
+                        />
+                        <div className="qr-code-overlay">
+                        <QRCodeCanvas
+                            value={qrCode}
+                            size={135}
+                            level="H"
+                            fgColor="#593222"
+                            bgColor="#FFFFFF"
+                        />
+                        </div>
+                        <p className="qr-content">
+                            Nội dung: {originalContent}
+                            <button
+                                className="copy-btn"
+                                onClick={() => copyToClipboard(originalContent || '')}
+                            >
+                                Copy
+                            </button>
+                        </p>
+                        <p className="qr-amount">
+                            Số tiền: {formatCurrency(amount)}
+                            <button
+                                className="copy-btn"
+                                onClick={() => copyToClipboard(formatCurrency(amount))}
+                            >
+                                Copy
+                            </button>
+                        </p>
+                        <p className="qr-amount-words">
+                            Bằng chữ: {convertNumberToWords(amount)}
+                            <button
+                                className="copy-btn"
+                                onClick={() => copyToClipboard(convertNumberToWords(amount))}
+                            >
+                                Copy
+                            </button>
+                        </p>
+                    </div>
+                ) : (
+                    <div className="qr-frame-container">
+                        <img
+                            src="images/qr-kit-vnedu.png"
+                            alt="Khung VietQR"
+                            className="qr-frame"
+                        />
+                        <div className="qr-code-overlay">
+                        <QRCodeCanvas
+                            value="https://vietqr.online"
+                            size={135}
+                            level="H"
+                            fgColor="#593222"
+                            bgColor="#FFFFFF"
+                            />
+                        </div>
+                        <p className="qr-string">Chưa có mã QR nào được tạo</p>
+                    </div>
+                )}
+            </div>
+            <div className="qr-display-container">
+                <h2>Mã QR EVN</h2>
 
                 {qrCode ? (
                     <div className="qr-frame-container">
@@ -257,12 +324,12 @@ function QrForm() {
                             alt="Khung VietQR"
                             className="qr-frame"
                         />
-                        <div className="qr-code-overlay">
+                        <div className="qr-code-overlay-evn">
                         <QRCodeCanvas
                             value={qrCode}
                             size={180}
                             level="H"
-                            fgColor="#0C2477"
+                            fgColor="#3300FF"
                             bgColor="#FFFFFF"
                         />
                         </div>
@@ -301,12 +368,12 @@ function QrForm() {
                             alt="Khung VietQR"
                             className="qr-frame"
                         />
-                        <div className="qr-code-overlay">
+                        <div className="qr-code-overlay-evn">
                         <QRCodeCanvas
                             value="https://vietqr.online"
                             size={180}
                             level="H"
-                            fgColor="#0C2477"
+                            fgColor="#3300FF"
                             bgColor="#FFFFFF"
                             />
                         </div>
