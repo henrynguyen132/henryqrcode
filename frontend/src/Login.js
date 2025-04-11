@@ -8,7 +8,7 @@ function Login({ onLoginSuccess }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'admin') {
+    if (username === 'admin' && password === '6e85603ae212ab2e7c88bdb85fd0f4b7') {
       onLoginSuccess();
     } else {
       alert('Sai tài khoản hoặc mật khẩu!');
